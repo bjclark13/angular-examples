@@ -1,0 +1,27 @@
+<h1>Budget Buddy</h1>
+
+<h2>Budget: {{budget | currency }}</h2>
+<h2>Spent: {{getTotal() | currency }} </h2>
+<h3>You've used {{ (getTotal() / budget ) | percent:'0.0-4'}} of your budget</h3>
+
+<h2>Your Transactions</h2>
+
+<ol>
+    <app-transaction *ngFor="let transaction of transactions" [transaction]="transaction"></app-transaction>
+</ol>
+
+<p>
+    <label>
+  Title
+  <input [(ngModel)]="newTransaction.title" (keyup.enter)="onAdd()" />
+</label>
+</p>
+
+<p>
+    <label>
+    Cost
+    <input type="number" min="0" [(ngModel)]="newTransaction.cost" (keyup.enter)="onAdd()" />
+  </label>
+</p>
+
+<button (click)="onAdd()">Add Transaction</button>

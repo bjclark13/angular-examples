@@ -1,0 +1,16 @@
+button {
+    border: 1px solid #121210;
+    padding: .5rem 1rem;
+    background-color: #fff;
+}
+
+p {
+    display: flex;
+    align-items: center;
+}
+
+p span {
+    flex-grow: 1;
+    text-align: center;
+    vertical-align: middle;
+}

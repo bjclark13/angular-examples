@@ -1,0 +1,23 @@
+<app-select-cups (grams)="setGrams($event)"></app-select-cups>
+
+<section>
+    <h2>Select Your Ratio of Coffee</h2>
+
+    <div class="ratio-row">
+        <app-ratio-option class="column" (click)="selectionOption(ratio)" [ratio]="ratio" *ngFor="let ratio of ratios; let i=index" [selected]="selectedRatio === ratio"></app-ratio-option>
+    </div>
+</section>
+
+<section>
+    <h2>Steps to Pour Over</h2>
+    <ul>
+        <li>You'll need {{ gramsOfWater }} grams of water.</li>
+        <li>You'll need {{ (gramsOfWater / selectedRatio) | number : '1.0-0'}} grams of coffee.</li>
+    </ul>
+
+    <ol>
+        <li>Heat the water to a boil.</li>
+        <li>Pour {{(gramsOfWater / 10)}} grams to release the carbon dioxide. This is called "blooming".</li>
+        <li>Wait for 1 minute, then pour the rest of the water, in 15 seconds intervals.</li>
+    </ol>
+</section>

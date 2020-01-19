@@ -1,0 +1,15 @@
+.ratio-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ratio-row .column {
+    flex: 1 0 calc(50% - 1rem - 10px);
+    padding: .5rem;
+}
+
+.ratio-row .column:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}

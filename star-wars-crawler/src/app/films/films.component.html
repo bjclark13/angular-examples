@@ -1,3 +1,3 @@
-<div *ngFor="let film of films">
-    Episode {{film.episode_id}}: {{film.title}}
+<div class="films">
+    <app-film-detail-block *ngFor="let film of films" [film]="film"> </app-film-detail-block>
 </div>

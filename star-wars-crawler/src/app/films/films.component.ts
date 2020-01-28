@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {StarWarsService} from '../star-wars.service';
+import { StarWarsService } from '../star-wars.service';
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html',
@@ -7,7 +7,7 @@ import {StarWarsService} from '../star-wars.service';
 })
 export class FilmsComponent implements OnInit {
 
-  constructor( private _service : StarWarsService) { }
+  constructor( private _service : StarWarsService ) { }
   films : [];
 
   ngOnInit() {

@@ -9,6 +9,10 @@ import { ResumeComponent } from './resume/resume.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: HomeComponent
+  },
+  {
     path: 'about',
     component: AboutUsComponent
   },
@@ -32,12 +36,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    pathMatch: 'full'
-  },
-  
-  {
-    path: '',
-    redirectTo: 'home',
     pathMatch: 'full'
   },
   {

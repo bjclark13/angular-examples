@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  showMessage : boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    console.log('form submitted from the parent!');
+    this.showMessage = true;
+  }
 }

@@ -1,1 +1,4 @@
 <p>contact works!</p>
+
+<p *ngIf="showMessage">You have successfully submitted your form!</p>
+<app-contact-form (submitted)="onSubmit()"></app-contact-form>

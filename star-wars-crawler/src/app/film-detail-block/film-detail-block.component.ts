@@ -10,6 +10,9 @@ export class FilmDetailBlockComponent implements OnInit {
   @Input()
   film : any;
 
+  @Input()
+  filmNumber : number;
+
   constructor() { }
 
   ngOnInit() {

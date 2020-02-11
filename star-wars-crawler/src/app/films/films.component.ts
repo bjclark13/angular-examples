@@ -1,5 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { StarWarsService } from '../star-wars.service';
+
+interface RedditPost {
+    data: {
+      title;
+      permalink;
+      thumbnail;
+    }
+};
+
+interface RedditResponse {
+  data: {
+    children: RedditPost[]
+  }
+} 
+
+
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html',
@@ -8,10 +24,18 @@ import { StarWarsService } from '../star-wars.service';
 export class FilmsComponent implements OnInit {
 
   constructor( private _service : StarWarsService ) { }
-  films : [];
+  films : RedditPost[];
 
   ngOnInit() {
-    this._service.getFilms().subscribe( (data : any) => this.films = data.results );
+    this._service.getFilms().subscribe((response : RedditResponse) => {
+     // this.films = data.results;
+     this.films = response.data.children;
+    }, err => console.error(err));
+  }
+
+  callbackFunction(response) {
+    console.log(response);
   }
 
 }
+
